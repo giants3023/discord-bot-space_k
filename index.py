@@ -5,7 +5,8 @@ from re import I
 from sqlite3 import Timestamp
 from turtle import Turtle, title
 import discord
-token = "OTc1NzA4ODg2NjUwNzQ0ODMz.GOj2Pi.UQjzHhIe9Lw8SVF6VUoZ_eGIHO5G_VUOGmRAo0"
+import os
+token = "access_token"
 client = discord.Client()
 
 @client.event
@@ -38,4 +39,5 @@ async def on_message(message):
         embed.add_field(name="개점일", value="2022년 5월 16일", inline=True)
         await message.channel.send(embed=embed)
 
+access_token = os.environ["BOT_TOKEN"]
 client.run(token)
